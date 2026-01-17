@@ -1,0 +1,16 @@
+lib.parseFunc_Header < lib.parseFunc_RTE
+lib.parseFunc_Header.nonTypoTagStdWrap >
+
+lib.contentElement {
+  partialRootPaths {
+    14 = EXT:ot_ceheader/Resources/Private/Bootstrap5/Partials/
+  }
+}
+
+[isLoaded('ot_sitekitbase')]
+  lib.sitekitContentElement {
+    partialRootPaths {
+      14 = EXT:ot_ceheader/Resources/Private/Bootstrap5/Partials/
+    }
+  }
+[END]

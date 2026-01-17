@@ -1,0 +1,34 @@
+// Example CSS
+.ot-ceheader-subheader, .header-line {display: block;}
+.ot-ceheader-preheader {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: var(--bs-white);
+    --bs-badge-border-radius: var(--bs-border-radius);
+
+    border-radius: var(--bs-border-radius-pill);
+    color: var(--bs-badge-color);
+
+    background-color: RGBA(var(--bs-primary-rgb), var(--bs-bg-opacity, 1));
+    display: inline-block;
+
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    margin-bottom: 1em;
+}
+
+.ot-ceheader-h {
+    display: flex;
+    flex-wrap: wrap; // For narrow viewports
+}
+.ot-ceheader-subheader {
+    font-size: 0.5em;
+    color: #999;
+}
