@@ -1,0 +1,44 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+  config:
+    autoParagraph: false
+    height: 100
+    toolbar:
+      items:
+        - bold
+        - italic
+        - style
+        - softhyphen
+        - sourceEditing
+    style:
+      definitions:
+        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:primaryColor'
+          element: 'span'
+          classes: [ 'text-primary' ]
+        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:secondaryColor'
+          element: 'span'
+          classes: [ 'text-secondary' ]
+        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:tertiaryColor'
+          element: 'span'
+          classes: [ 'text-tertiary' ]
+    htmlSupport:
+      allow:
+        - name: 'span'
+          classes:
+            - 'text-primary'
+            - 'text-secondary'
+            - 'text-tertiary'
+
+processing:
+  allowTags:
+    - p
+    - br
+    - span
+    - strong
+    - em
+  allowAttributes:
+    - class

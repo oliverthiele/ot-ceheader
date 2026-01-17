@@ -1,0 +1,81 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      lang="en" data-namespace-typo3-fluid="true">
+
+<f:asset.css identifier="ot-ceheader">
+    .ot-ceheader-h {display: flex;}
+    .ot-ceheader-subheader, .header-line {display: block;}
+    .ot-ceheader-br {display: block;height: 0;}
+    @media (max-width: 767.98px) {
+    .ot-ceheader-h {display: flex;flex-wrap: wrap;}
+      .ot-ceheader-br {display: inline;}
+      .ot-ceheader-br::before {content: " ";white-space: normal;}
+    }
+</f:asset.css>
+
+<f:if condition="{data.header_layout} != 100">
+    <f:variable name="headerText"><f:format.html parseFuncTSPath="lib.parseFunc_Header">{ot:format.header(value: data.header_rte, fallback: data.header)}</f:format.html></f:variable>
+
+    <f:if condition="{data.header_layout} == 0">
+        <f:then>
+            <f:variable name="headerLayout" value="{settings.defaultHeaderType}"/>
+        </f:then>
+        <f:else>
+            <f:variable name="headerLayout" value="{data.header_layout}"/>
+        </f:else>
+    </f:if>
+
+    <f:switch expression="{data.header_position}">
+        <f:case value="center">
+            <f:variable name="classPosition" value=" text-center" />
+        </f:case>
+        <f:case value="right">
+            <f:variable name="classPosition" value=" text-end" />
+        </f:case>
+        <f:case value="left">
+            <f:variable name="classPosition" value=" text-start" />
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="classPosition" value="" />
+        </f:defaultCase>
+    </f:switch>
+    <f:variable name="headerClass">{data.header_style}{classPosition}</f:variable>
+
+    <f:if condition="{data.preheader}">
+        <f:then>
+            <header class="{classPosition}">
+                <f:if condition="{data.preheader}">
+                    <div class="ot-ceheader-preheader">
+                        <f:if condition="{data.icon_identifier}">
+                            <i:icon identifier="{data.icon_identifier}" />
+                        </f:if>
+                        {data.preheader}
+                    </div>
+                </f:if>
+                <f:render section="HeaderContent" arguments="{_all}" />
+            </header>
+        </f:then>
+        <f:else>
+            <f:render section="HeaderContent" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</f:if>
+
+<f:section name="HeaderContent">
+
+    <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
+        <f:if condition="{data.icon_identifier} && {data.preheader} == ''">
+            <i:icon identifier="{data.icon_identifier}" additionalClasses="me-2" aria-hidden="true" />
+        </f:if>
+        <span class="ot-ceheader-text">
+            <f:link.typolink parameter="{data.header_link}">
+                {headerText -> f:format.raw()}
+            </f:link.typolink>
+            <f:if condition="{data.subheader}">
+                <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+            </f:if>
+        </span>
+    </h{headerLayout}>
+
+
+</f:section>
+</html>

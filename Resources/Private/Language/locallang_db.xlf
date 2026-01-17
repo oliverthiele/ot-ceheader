@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en"
+		  datatype="plaintext"
+		  original="EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf"
+		  date="2026-01-17T15:39:46Z"
+		  product-name="ot-ceheader">
+		<header/>
+		<body>
+			<trans-unit id="icon_identifier" resname="icon_identifier">
+				<source>Icon Identifier</source>
+			</trans-unit>
+			<trans-unit id="header_rte" resname="header_rte">
+				<source>Header with RTE</source>
+			</trans-unit>
+			<trans-unit id="preheader" resname="preheader">
+				<source>Eyebrow</source>
+			</trans-unit>
+			<trans-unit id="primaryColor" resname="primaryColor">
+				<source>Primary Color</source>
+			</trans-unit>
+			<trans-unit id="secondaryColor" resname="secondaryColor">
+				<source>Secondary Color</source>
+			</trans-unit>
+			<trans-unit id="tertiaryColor" resname="tertiaryColor">
+				<source>Tertiary Color</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
