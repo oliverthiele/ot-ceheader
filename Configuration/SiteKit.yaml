@@ -1,0 +1,4 @@
+elements:
+  - ctype: ot_ceheader
+    groups: [group_content_wide, group_content_small, group_hero]
+    grid: { minCols: 2, requiresFullWidth: false }
