@@ -61,21 +61,20 @@
 </f:if>
 
 <f:section name="HeaderContent">
-
-    <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
-        <f:if condition="{data.icon_identifier} && {data.preheader} == ''">
-            <i:icon identifier="{data.icon_identifier}" additionalClasses="me-2" aria-hidden="true" />
-        </f:if>
-        <span class="ot-ceheader-text">
-            <f:link.typolink parameter="{data.header_link}">
-                {headerText -> f:format.raw()}
-            </f:link.typolink>
-            <f:if condition="{data.subheader}">
-                <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+    <f:if condition="{headerText}">
+        <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
+            <f:if condition="{data.icon_identifier} && {data.preheader} == ''">
+                <i:icon identifier="{data.icon_identifier}" additionalClasses="me-2" aria-hidden="true" />
             </f:if>
-        </span>
-    </h{headerLayout}>
-
-
+            <span class="ot-ceheader-text">
+                <f:link.typolink parameter="{data.header_link}">
+                    {headerText -> f:format.raw()}
+                </f:link.typolink>
+                <f:if condition="{data.subheader}">
+                    <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+                </f:if>
+            </span>
+        </h{headerLayout}>
+    </f:if>
 </f:section>
 </html>
