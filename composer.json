@@ -1,8 +1,15 @@
 {
 	"name": "oliverthiele/ot-ceheader",
 	"type": "typo3-cms-extension",
-	"description": "Adds an optional RTE-based header field (header_rte) with preheader and icon support for tt_content headers.",
-	"keywords": ["typo3", "extension", "content-element", "header", "rte", "ckeditor"],
+	"description": "CE Header - Adds an optional RTE-based header field (header_rte) with preheader and icon support for tt_content headers.",
+	"keywords": [
+		"typo3",
+		"extension",
+		"content-element",
+		"header",
+		"rte",
+		"ckeditor"
+	],
 	"homepage": "https://www.oliver-thiele.de",
 	"license": [
 		"GPL-2.0-or-later"
@@ -16,9 +23,10 @@
 		}
 	],
 	"require": {
+		"php": ">=8.3",
 		"ext-dom": "*",
 		"ext-libxml": "*",
-		"typo3/cms-core": "^13.4",
+		"typo3/cms-core": "^13.4||^14.3",
 		"oliverthiele/ot-icons": "^1.0"
 	},
 	"require-dev": {
