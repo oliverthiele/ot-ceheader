@@ -1,1 +1,6 @@
 RTE.config.tt_content.header_rte.preset = otCeheader
+
+TCEFORM.tt_content.header_layout {
+    removeItems = 0
+    default = 2
+}

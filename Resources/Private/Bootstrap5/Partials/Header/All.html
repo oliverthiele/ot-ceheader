@@ -1,4 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ot="http://typo3.org/ns/OliverThiele/OtCeheader/ViewHelpers"
       lang="en" data-namespace-typo3-fluid="true">
 
 <f:asset.css identifier="ot-ceheader">
@@ -13,8 +14,6 @@
 </f:asset.css>
 
 <f:if condition="{data.header_layout} != 100">
-    <f:variable name="headerText"><f:format.html parseFuncTSPath="lib.parseFunc_Header">{ot:format.header(value: data.header_rte, fallback: data.header)}</f:format.html></f:variable>
-
     <f:if condition="{data.header_layout} == 0">
         <f:then>
             <f:variable name="headerLayout" value="{settings.defaultHeaderType}"/>
@@ -26,10 +25,10 @@
 
     <f:switch expression="{data.header_position}">
         <f:case value="center">
-            <f:variable name="classPosition" value=" text-center" />
+            <f:variable name="classPosition" value=" text-center justify-content-center" />
         </f:case>
         <f:case value="right">
-            <f:variable name="classPosition" value=" text-end" />
+            <f:variable name="classPosition" value=" text-end justify-content-end" />
         </f:case>
         <f:case value="left">
             <f:variable name="classPosition" value=" text-start" />
@@ -40,41 +39,61 @@
     </f:switch>
     <f:variable name="headerClass">{data.header_style}{classPosition}</f:variable>
 
-    <f:if condition="{data.preheader}">
+    <f:if condition="{data.header_rte_enable}">
         <f:then>
-            <header class="{classPosition}">
+            <f:variable name="headerText"><f:format.html parseFuncTSPath="lib.parseFunc_Header">{ot:format.header(value: data.header_rte, fallback: data.header)}</f:format.html></f:variable>
+            <f:if condition="{headerText}">
                 <f:if condition="{data.preheader}">
-                    <div class="ot-ceheader-preheader">
-                        <f:if condition="{data.icon_identifier}">
-                            <i:icon identifier="{data.icon_identifier}" />
-                        </f:if>
-                        {data.preheader}
-                    </div>
+                    <f:then>
+                        <header class="{classPosition}">
+                            <div class="ot-ceheader-preheader">
+                                <f:if condition="{data.icon_identifier}">
+                                    <i:icon identifier="{data.icon_identifier}" />
+                                </f:if>
+                                {data.preheader}
+                            </div>
+                            <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
+                                <span class="ot-ceheader-text">
+                                    <f:link.typolink parameter="{data.header_link}">
+                                        {headerText -> f:format.raw()}
+                                    </f:link.typolink>
+                                    <f:if condition="{data.subheader}">
+                                        <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+                                    </f:if>
+                                </span>
+                            </h{headerLayout}>
+                        </header>
+                    </f:then>
+                    <f:else>
+                        <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
+                            <f:if condition="{data.icon_identifier}">
+                                <i:icon identifier="{data.icon_identifier}" additionalClasses="me-2" aria-hidden="true" />
+                            </f:if>
+                            <span class="ot-ceheader-text">
+                                <f:link.typolink parameter="{data.header_link}">
+                                    {headerText -> f:format.raw()}
+                                </f:link.typolink>
+                                <f:if condition="{data.subheader}">
+                                    <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+                                </f:if>
+                            </span>
+                        </h{headerLayout}>
+                    </f:else>
                 </f:if>
-                <f:render section="HeaderContent" arguments="{_all}" />
-            </header>
+            </f:if>
         </f:then>
         <f:else>
-            <f:render section="HeaderContent" arguments="{_all}" />
+            <f:if condition="{data.header}">
+                <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
+                    <f:link.typolink parameter="{data.header_link}">
+                        {data.header}
+                    </f:link.typolink>
+                    <f:if condition="{data.subheader}">
+                        <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
+                    </f:if>
+                </h{headerLayout}>
+            </f:if>
         </f:else>
     </f:if>
 </f:if>
-
-<f:section name="HeaderContent">
-    <f:if condition="{headerText}">
-        <h{headerLayout} id="header-u{data.uid}" class="ot-ceheader-h {headerClass}">
-            <f:if condition="{data.icon_identifier} && {data.preheader} == ''">
-                <i:icon identifier="{data.icon_identifier}" additionalClasses="me-2" aria-hidden="true" />
-            </f:if>
-            <span class="ot-ceheader-text">
-                <f:link.typolink parameter="{data.header_link}">
-                    {headerText -> f:format.raw()}
-                </f:link.typolink>
-                <f:if condition="{data.subheader}">
-                    <span id="subheader-u{data.uid}" class="ot-ceheader-subheader" role="doc-subtitle">{data.subheader}</span>
-                </f:if>
-            </span>
-        </h{headerLayout}>
-    </f:if>
-</f:section>
 </html>

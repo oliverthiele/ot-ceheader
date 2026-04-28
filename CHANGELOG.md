@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] — 2026-04-28
+
+### Added
+
+- Checkbox `header_rte_enable` to opt in to the formatted heading mode; `header_rte`, `preheader` and `icon_identifier` are hidden by default via `displayCond` and appear only when the toggle is active
+- `onChange: reload` on `header_rte_enable` for immediate form refresh
+
+### Changed
+
+- Fix heading alignment: added `justify-content-center` / `justify-content-end` alongside Bootstrap text-alignment classes to correctly position flex children
+- Remove "Standard" (0) from `header_layout` select and set default to `h2` via page TSconfig
+- Default mode (checkbox off) renders `data.header` directly without span wrapper markup
+
+---
+
 ## [2.0.1] — 2026-04-26
 
 ### Changed

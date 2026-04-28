@@ -7,6 +7,9 @@
 		  product-name="ot-ceheader">
 		<header/>
 		<body>
+			<trans-unit id="header_rte_enable" resname="header_rte_enable">
+				<source>Formatted heading</source>
+			</trans-unit>
 			<trans-unit id="icon_identifier" resname="icon_identifier">
 				<source>Icon Identifier</source>
 			</trans-unit>
