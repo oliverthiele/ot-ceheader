@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.1] — 2026-05-22
+
+### Fixed
+
+- Replace invalid `TCEFORM.default` with `TCAdefaults.tt_content.header_layout = 2` so that h2 is correctly applied as the default heading level for new content elements
+
+---
+
 ## [2.1.0] — 2026-04-28
 
 ### Added
