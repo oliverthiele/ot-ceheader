@@ -20,7 +20,12 @@ $tempColumns = [
     'header_rte' => [
         'exclude' => true,
         'label' => $ll . 'header_rte',
-        'displayCond' => 'FIELD:header_rte_enable:REQ:true',
+        'displayCond' => [
+            'OR' => [
+                'FIELD:header_rte_enable:REQ:true',
+                'USER:OliverThiele\OtCeheader\UserFunc\DisplayCondition->isContentBlock',
+            ],
+        ],
         'config' => [
             'type' => 'text',
             'rows' => 4,
@@ -32,7 +37,12 @@ $tempColumns = [
     'preheader' => [
         'exclude' => true,
         'label' => $ll . 'preheader',
-        'displayCond' => 'FIELD:header_rte_enable:REQ:true',
+        'displayCond' => [
+            'OR' => [
+                'FIELD:header_rte_enable:REQ:true',
+                'USER:OliverThiele\OtCeheader\UserFunc\DisplayCondition->isContentBlock',
+            ],
+        ],
         'config' => [
             'type' => 'input',
             'size' => 50,
@@ -42,9 +52,17 @@ $tempColumns = [
     'icon_identifier' => [
         'exclude' => true,
         'label' => $ll . 'icon_identifier',
-        'displayCond' => 'FIELD:header_rte_enable:REQ:true',
+        'displayCond' => [
+            'OR' => [
+                'FIELD:header_rte_enable:REQ:true',
+                'USER:OliverThiele\OtCeheader\UserFunc\DisplayCondition->isContentBlock',
+            ],
+        ],
         'config' => [
             'type' => 'input',
+            'renderType' => ExtensionManagementUtility::isLoaded('ot_iconselector')
+                ? 'otIconSelector'
+                : null,
             'size' => 30,
             'max' => 40,
             'eval' => 'trim',
