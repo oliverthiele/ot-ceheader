@@ -32,6 +32,9 @@
 	"require-dev": {
 		"roave/security-advisories": "dev-latest"
 	},
+	"suggest": {
+		"oliverthiele/ot-iconselector": "Provides a visual icon selector with AJAX search and SVG preview for the icon_identifier field"
+	},
 	"conflict": {
 	},
 	"autoload": {
