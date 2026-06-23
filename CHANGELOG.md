@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased] — 3.0.0
+
+### Changed
+
+- Drop TYPO3 v13 support, require TYPO3 `^14.3`
+- Raise PHP minimum to `>=8.4`
+- Require `ot-icons` `^3.0`
+- Migrate Fluid namespace registration from `ext_localconf.php` to `Configuration/Fluid/Namespaces.php`
+
+---
+
 ## [2.2.0] — 2026-06-23
 
 ### Added
