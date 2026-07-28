@@ -1,8 +1,8 @@
 # OT CE Header — TYPO3 Extension
 
-Enhanced header content element for TYPO3 v13 and v14 with RTE support, preheader (eyebrow), icons, and responsive line breaks.
+Enhanced header content element for TYPO3 v14 with RTE support, preheader (eyebrow), icons, and responsive line breaks.
 
-[![TYPO3](https://img.shields.io/badge/TYPO3-13.4%20%7C%2014.3-orange.svg)](https://typo3.org/)
+[![TYPO3](https://img.shields.io/badge/TYPO3-14.3-orange.svg)](https://typo3.org/)
 [![Packagist Version](https://img.shields.io/packagist/v/oliverthiele/ot-ceheader.svg)](https://packagist.org/packages/oliverthiele/ot-ceheader)
 [![PHP](https://img.shields.io/packagist/dependency-v/oliverthiele/ot-ceheader/php.svg)](https://php.net/)
 [![License](https://img.shields.io/packagist/l/oliverthiele/ot-ceheader.svg)](LICENSE)
@@ -24,9 +24,9 @@ Enhanced header content element for TYPO3 v13 and v14 with RTE support, preheade
 
 | Requirement                                                                       | Version          |
 |-----------------------------------------------------------------------------------|------------------|
-| TYPO3                                                                             | `^13.4 \| ^14.3` |
-| PHP                                                                               | `>=8.3`          |
-| [oliverthiele/ot-icons](https://packagist.org/packages/oliverthiele/ot-icons)     | `^1.0`           |
+| TYPO3                                                                             | `^14.3`          |
+| PHP                                                                               | `>=8.4`          |
+| [oliverthiele/ot-icons](https://packagist.org/packages/oliverthiele/ot-icons)     | `^3.0`           |
 
 ## Installation
 

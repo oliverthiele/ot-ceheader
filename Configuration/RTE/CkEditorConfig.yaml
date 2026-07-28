@@ -16,13 +16,13 @@ editor:
         - sourceEditing
     style:
       definitions:
-        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:primaryColor'
+        - name: 'ot_ceheader.db:primaryColor'
           element: 'span'
           classes: [ 'text-primary' ]
-        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:secondaryColor'
+        - name: 'ot_ceheader.db:secondaryColor'
           element: 'span'
           classes: [ 'text-secondary' ]
-        - name: 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:tertiaryColor'
+        - name: 'ot_ceheader.db:tertiaryColor'
           element: 'span'
           classes: [ 'text-tertiary' ]
     htmlSupport:

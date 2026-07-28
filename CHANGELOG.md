@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.0] — 2026-07-28
+
+### Changed
+
+- Drop TYPO3 v13 support, require TYPO3 `^14.3`
+- Raise PHP minimum to `>=8.4`
+- Require `ot-icons` `^3.0`
+- Migrate Fluid namespace registration from `ext_localconf.php` to `Configuration/Fluid/Namespaces.php`
+- Migrate the language files from XLIFF 1.2 to XLIFF 2.0. Unit identifiers and
+  all translations are unchanged, so no label reference needs adjusting
+- Reference labels via translation domain mapping instead of full file paths.
+  `ot_ceheader.db:` replaces
+  `LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:` in the TCA
+  overrides and in the CKEditor style definitions
+
+---
+
 ## [2.2.0] — 2026-06-23
 
 ### Added
@@ -81,7 +98,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive line breaks
 - Bootstrap 5 compatible output
 
-[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.0.1...v2.1.0
