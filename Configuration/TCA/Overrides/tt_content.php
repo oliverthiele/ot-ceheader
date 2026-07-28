@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-$ll = 'LLL:EXT:ot_ceheader/Resources/Private/Language/locallang_db.xlf:';
+$ll = 'ot_ceheader.db:';
 
 $tempColumns = [
     'header_rte_enable' => [
