@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-	<file source-language="en" datatype="plaintext"
-		  original="EXT:ot_ceheader/Configuration/Sets/OtCeheader/labels.xlf"
-		  date="2026-01-10T15:06:00Z" product-name="ot-ceheader">
-		<header/>
-		<body>
-			<trans-unit id="label" resname="label">
-				<source>CE Header</source>
-			</trans-unit>
-			<trans-unit id="categories.otCeheader" resname="categories.otCeheader">
-				<source>CE Header</source>
-			</trans-unit>
-		</body>
-	</file>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ot-ceheader-labels"
+        original="EXT:ot_ceheader/Configuration/Sets/OtCeheader/labels.xlf">
+    <unit id="label">
+      <segment>
+        <source>CE Header</source>
+      </segment>
+    </unit>
+    <unit id="categories.otCeheader">
+      <segment>
+        <source>CE Header</source>
+      </segment>
+    </unit>
+  </file>
 </xliff>
