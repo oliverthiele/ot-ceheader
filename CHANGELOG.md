@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [3.0.1] — 2026-09-29
 
 ### Fixed
 
@@ -24,6 +24,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   core's `Processing.yaml` allows: YAML imports append list entries instead of
   replacing them. Documented in the preset; the heading remap above does not
   depend on it.
+
+### Changed
+
+- Type the parameters of the `displayCond` user function; a CType that is not
+  scalar now yields an empty value instead of a cast. No change for well-formed
+  records.
 
 ---
 
@@ -118,7 +124,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive line breaks
 - Bootstrap 5 compatible output
 
-[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.0...v2.1.1
