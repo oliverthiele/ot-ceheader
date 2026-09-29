@@ -8,11 +8,22 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 final class DisplayCondition
 {
+    /**
+     * @param array<string, mixed> $parameters
+     */
     public function isContentBlock(array $parameters): bool
     {
         $record = $parameters['record'] ?? [];
+        if (!is_array($record)) {
+            return false;
+        }
+
+        // A select field hands the value over as a single-element array.
         $cTypeRaw = $record['CType'] ?? '';
-        $cType = is_array($cTypeRaw) ? (string)($cTypeRaw[0] ?? '') : (string)$cTypeRaw;
+        if (is_array($cTypeRaw)) {
+            $cTypeRaw = $cTypeRaw[0] ?? '';
+        }
+        $cType = is_scalar($cTypeRaw) ? (string)$cTypeRaw : '';
 
         if ($cType === '') {
             return false;

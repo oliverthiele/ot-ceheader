@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.1] — 2026-09-29
+
+### Fixed
+
+- A heading tag (`<h1>`–`<h6>`) in `header_rte` — pasted from another page or typed
+  in the source view — was output inside the header's own heading element. The
+  browser closes the outer heading early, which left an empty heading in front of
+  the text; in a flex layout its gap shifted the visible header.
+  - The header ViewHelper now treats heading tags like `<p>` and turns them into
+    header-line spans, so records saved that way render correctly without being
+    edited.
+  - The RTE preset remaps heading tags to `<p>` when a record is saved
+    (`processing.entryHTMLparser_db`).
+- The `processing.allowTags` list of the RTE preset does not narrow the tags the
+  core's `Processing.yaml` allows: YAML imports append list entries instead of
+  replacing them. Documented in the preset; the heading remap above does not
+  depend on it.
+
+### Changed
+
+- Type the parameters of the `displayCond` user function; a CType that is not
+  scalar now yields an empty value instead of a cast. No change for well-formed
+  records.
+
+---
+
 ## [3.0.0] — 2026-07-28
 
 ### Changed
@@ -98,7 +124,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive line breaks
 - Bootstrap 5 compatible output
 
-[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/oliverthiele/ot-ceheader/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.2.0...v3.0.0
 [2.2.0]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/oliverthiele/ot-ceheader/compare/v2.1.0...v2.1.1
