@@ -34,6 +34,21 @@ editor:
             - 'text-tertiary'
 
 processing:
+  # Headings become paragraphs when the record is saved. A header is one heading
+  # already, so a pasted <h2> (or one typed in the source view) is remapped before
+  # the rest of the processing runs; the text and inline markup stay.
+  entryHTMLparser_db:
+    keepNonMatchedTags: 1
+    tags:
+      h1: { remap: p }
+      h2: { remap: p }
+      h3: { remap: p }
+      h4: { remap: p }
+      h5: { remap: p }
+      h6: { remap: p }
+  # Note: the core's Processing.yaml imported above brings its own allowTags list,
+  # and YAML imports append list entries rather than replace them. This list
+  # therefore does not narrow what the core allows — it only adds to it.
   allowTags:
     - p
     - br

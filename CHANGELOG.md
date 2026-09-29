@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Fixed
+
+- A heading tag (`<h1>`–`<h6>`) in `header_rte` — pasted from another page or typed
+  in the source view — was output inside the header's own heading element. The
+  browser closes the outer heading early, which left an empty heading in front of
+  the text; in a flex layout its gap shifted the visible header.
+  - The header ViewHelper now treats heading tags like `<p>` and turns them into
+    header-line spans, so records saved that way render correctly without being
+    edited.
+  - The RTE preset remaps heading tags to `<p>` when a record is saved
+    (`processing.entryHTMLparser_db`).
+- The `processing.allowTags` list of the RTE preset does not narrow the tags the
+  core's `Processing.yaml` allows: YAML imports append list entries instead of
+  replacing them. Documented in the preset; the heading remap above does not
+  depend on it.
+
+---
+
 ## [3.0.0] — 2026-07-28
 
 ### Changed

@@ -63,9 +63,13 @@ class HeaderViewHelper extends AbstractViewHelper
             ['text-primary', 'text-secondary', 'text-accent']
         );
 
-        // Replace <p> (also with attributes) and </p> with header-line spans
-        $value = (string)preg_replace('~<p\b[^>]*>~i', '<span class="header-line">', $value);
-        $value = (string)preg_replace('~</p>~i', '</span>', $value);
+        // Replace <p> and <h1>–<h6> (also with attributes) and their closing tags with
+        // header-line spans. The value is output inside a heading element, and a heading
+        // inside a heading makes the browser close the outer one early: an empty heading
+        // followed by a second one. Headings get into the field through copy & paste or
+        // the source view, and records saved that way are covered here as well.
+        $value = (string)preg_replace('~<(?:p|h[1-6])\b[^>]*>~i', '<span class="header-line">', $value);
+        $value = (string)preg_replace('~</(?:p|h[1-6])\s*>~i', '</span>', $value);
 
         // Replace <br> with a responsive line-break element.
         // Desktop: line break; Mobile: normal space
