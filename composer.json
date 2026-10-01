@@ -44,7 +44,11 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "ot_ceheader"
+			"extension-key": "ot_ceheader",
+			"version": "3.0.1",
+			"Package": {
+				"providesPackages": {}
+			}
 		}
 	}
 }
